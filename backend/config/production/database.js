@@ -10,16 +10,18 @@
 //   },
 // });
 
+const parse = require('pg-connection-string').parse;
+const config = parse('postgres://uksfxkaztyoeon:33941ec48928e52fa13d230d39bb1a88753640d034145206463c2971bc7bed50@ec2-3-217-216-13.compute-1.amazonaws.com:5432/ddgbhkaju2jfoe');
 
 module.exports = ({ env }) => ({
   connection: {
     client: 'postgres',
     connection: {
-      host: 'ec2-3-217-216-13.compute-1.amazonaws.com',
-      port: 5432,
-      database: 'ddgbhkaju2jfoe',
-      user: 'uksfxkaztyoeon',
-      password: '33941ec48928e52fa13d230d39bb1a88753640d034145206463c2971bc7bed50',
+      host: config.host,
+      port: config.port,
+      database: config.database,
+      user: config.user,
+      password: config.password,
       ssl: {
         rejectUnauthorized: false
       },
