@@ -1,5 +1,5 @@
 module.exports = ({ env }) => ({
   post: 80,
-  host: 'hamdardpk.herokuapp.com',
+  host: '0.0.0.0',
   url: 'https://hamdardpk.herokuapp.com',
 });
