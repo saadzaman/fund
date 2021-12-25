@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "donee_details",
+  "info": {
+    "singularName": "donee-detail",
+    "pluralName": "donee-details",
+    "displayName": "DoneeDetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "donee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::donee.donee",
+      "inversedBy": "donee_details"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "phonenumber",
+        "text",
+        "longtext",
+        "number",
+        "base64"
+      ]
+    }
+  }
+}

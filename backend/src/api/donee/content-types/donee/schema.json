@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "donees",
+  "info": {
+    "singularName": "donee",
+    "pluralName": "donees",
+    "displayName": "Donee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "namenic": {
+      "type": "string",
+      "required": true
+    },
+    "mobilenum": {
+      "type": "biginteger",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "donee_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::donee-detail.donee-detail",
+      "mappedBy": "donee"
+    },
+    "address": {
+      "type": "richtext"
+    },
+    "longlat": {
+      "type": "string"
+    }
+  }
+}
